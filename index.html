@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shutdown</title>
+</head>
+<body>
+    <button id="shutdownBtn">Shutdown PC</button>
+
+    <script>
+        const { exec } = require('child_process');
+
+        document.getElementById('shutdownBtn').addEventListener('click', () => {
+            exec("shutdown /s /t 3", (err) => {
+                if (err) console.error(err);
+            });
+        });
+    </script>
+</body>
+</html>
